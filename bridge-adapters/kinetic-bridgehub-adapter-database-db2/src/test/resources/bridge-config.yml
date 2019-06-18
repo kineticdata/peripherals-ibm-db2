@@ -1,0 +1,36 @@
+# Values used for the bridge configuration using a key value pair of Configuration Label: Value
+# ie. For the property with a label of Username, the configuration will be Username: "test.user"
+# Do this for all of the configuration values
+Bridge Configuration:
+    Username: ""
+    Password: ""
+    Server: ""
+    Port: ""
+    Prognum: ""
+
+# Setting the different request configurations for the Standard Bridgehub tests
+    # Structure: Structure string
+    # Fields: At least two comma separated fields related to the structure
+        # NOTE: If order is supported, the first two fields in the string must be sortable
+    # Empty Value Query: A bridge query that NEVER returns any values
+    # Single Value Query: A bridge query that ALWAYS return one value
+    # Multiple Value Query: A bridge query that returns multiple values
+Test Request Configuration:
+    Structure: ""
+    Fields: ""
+    Empty Value Query: ""
+    Single Value Query: ""
+    Multiple Value Query: ""
+
+# Configuration of the various metadata options
+    # Pagination Type: Possible values (string) - offset,token,none
+        # offset: If the bridge uses a pageNumber,pageSize, and offset to handle pagination
+        # token: If the bridges uses a nextPageToken to handle pagination
+        # none: If the bridge doesn't support pagination, pagination tests are ignored
+    # Order Supported: Possible values (string) - true,false
+        # true: If order is supported, make sure that the first two fields in the
+        #       Test Request Configuration are sortable fields
+        # false: If the bridge doesn't support ordering, the order tests are ignored
+Metadata Configuration:
+    Pagination Type: "offset"
+    Order Supported: "true"
